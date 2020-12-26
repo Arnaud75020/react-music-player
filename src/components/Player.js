@@ -108,20 +108,17 @@ const Player = ({
                     <FontAwesomeIcon onClick={() => skipTrackHandler('skip-back')} className="skip-back" size="2x" icon={faAngleLeft} />    
                     <FontAwesomeIcon onClick={playSongHandler}className="play" size="2x" icon={isPlaying ? faPause : faPlay} />
                     <FontAwesomeIcon onClick={() => skipTrackHandler('skip-forward')} className="skip-forward" size="2x" icon={faAngleRight} />
-                    <FontAwesomeIcon
-          onClick={() => setActiveVolume(!activeVolume)}
-          icon={faVolumeDown}
-        />
-        {activeVolume && (
-          <input
-            onChange={changeVolume}
-            value={songInfo.volume}
-            max="1"
-            min="0"
-            step="0.01"
-            type="range"
-          />
-        )}
+                    <FontAwesomeIcon onClick={() => setActiveVolume(!activeVolume)} icon={faVolumeDown}/>
+                {activeVolume && (
+                  <input
+                    onChange={changeVolume}
+                    value={songInfo.volume}
+                    max="1"
+                    min="0"
+                    step="0.01"
+                    type="range"
+                  />
+                )}
             </div>
         </div>
      );
